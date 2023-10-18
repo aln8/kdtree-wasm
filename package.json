@@ -18,7 +18,7 @@
   },
   "scripts": {
     "build": "npm run build:node && npm run build:bundler && npm run build:web",
-    "build:bundler": "wasm-pack build --target bundler --release --out-dir dist/bundler && rm dist/bundler/.gitignore",
+    "build:bundler": "wasm-pack build --target bundler --release --out-dir dist/bundler && rm dist/bundler/.gitignore && npx ts-node js/wrapper.ts",
     "build:node": "wasm-pack build --target nodejs --release --out-dir dist/node && rm dist/node/.gitignore",
     "build:web": "wasm-pack build --target no-modules --release --out-dir dist/web && rm dist/web/.gitignore",
     "test": "npm run test:wasm-pack && npm run test:jest",
